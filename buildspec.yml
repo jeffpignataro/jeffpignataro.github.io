@@ -1,0 +1,40 @@
+version: 0.2
+ 
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+ 
+phases:
+  install:
+    #commands:
+      # - command
+      # - command
+    runtime-versions:
+      docker: 18
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+      - mkdir dist
+      - cp -R ./web/ dist
+  post_build:
+    commands:      
+      - mv dist/**/* ./
+      - rm -Rd dist/web
+      #- mv dist/* ./
+      - rm -R dist CODE_OF_CONDUCT.* CNAME* gulpfile.* *.yml LICENSE README* .git* .vscode*
+artifacts:
+  files:
+    - '**/*'
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths<span id="mce_SELREST_start" style="overflow:hidden;line-height:0;"></span>
