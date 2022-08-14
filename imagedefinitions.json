@@ -1,6 +1,0 @@
-[
-    {
-        "name": "nginx",
-        "imageUri": "nginx:latest"
-    }
-]
